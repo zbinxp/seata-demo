@@ -1,0 +1,32 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: springboot-feign-seata-order
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${mysql.address:127.0.0.1}:3306/seata_lab?useSSL=false&useUnicode=true&characterEncoding=UTF8
+    username: ${mysql.user:root}
+    password: ${mysql.password:rootpassword}
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+seata:
+  application-id: springboot-feign-seata-order
+  registry:
+    type: nacos
+    nacos:
+      serverAddr: 127.0.0.1:8848
+      namespace: 
+      group: DEFAULT_GROUP
+      application: seata-tc-server
+# 事务组
+  tx-service-group: my_test_tx_group
+  config:
+    type: nacos
+    nacos:
+      serverAddr: 127.0.0.1:8848
+      username: 
+      password: 
+      group: SEATA_GROUP
+      dataId: client.properties    
