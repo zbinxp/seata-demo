@@ -12,7 +12,7 @@ store.mode=db
 store.db.datasource=druid
 store.db.dbType=mysql
 store.db.driverClassName=com.mysql.cj.jdbc.Driver
-store.db.url=jdbc:mysql://nacos-standalone:3306/seata?useUnicode=true&rewriteBatchedStatements=true
+store.db.url=jdbc:mysql://mysql:3306/seata?useUnicode=true&rewriteBatchedStatements=true
 store.db.user=demo
 store.db.password=demopass
 store.db.minConn=5
